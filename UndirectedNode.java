@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class UndirectedNode implements Comparable<UndirectedNode>{
     public int id;
@@ -22,7 +22,6 @@ public class UndirectedNode implements Comparable<UndirectedNode>{
     }
 
 
-    // doesn't mean anything because adjacency list holds ids, not nodes
     @Override
     public int compareTo(UndirectedNode other) {
         if (this.degree > other.degree) {
@@ -30,7 +29,6 @@ public class UndirectedNode implements Comparable<UndirectedNode>{
         }
         return this.id < other.id ? -1 : 1;
     }
-
 
 
 }

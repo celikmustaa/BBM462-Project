@@ -1,9 +1,13 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ReadFile {
     public static String line = "";
     public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\twitch_gamers\\large_twitch_edges.csv";
+    //public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\lasftm_asia\\lastfm_asia_target.csv";
     public static ArrayList<String> lines = new ArrayList<String>();
 
     public ReadFile() throws IOException {
@@ -20,20 +24,18 @@ public class ReadFile {
         for (String line: lines) {
             String[] splitted = line.split(",");
 
-            if (!graph.map.containsKey(Integer.parseInt(splitted[0]))){
-                UndirectedNode node1 = new UndirectedNode(Integer.parseInt(splitted[0]));
-                graph.map.put(node1.id, node1);
-            }
-
-            if (!graph.map.containsKey(Integer.parseInt(splitted[1]))){
-                UndirectedNode node2 = new UndirectedNode(Integer.parseInt(splitted[1]));
-                graph.map.put(node2.id, node2);
+            for(int i=0; i<2; i++){
+                if (!graph.map.containsKey(Integer.parseInt(splitted[i]))){
+                    UndirectedNode node = new UndirectedNode(Integer.parseInt(splitted[i]));
+                    graph.map.put(node.id, node);
+                }
             }
 
             graph.connect(Integer.parseInt(splitted[0]), Integer.parseInt(splitted[1]));
 
         }
 
+        // sort the adjacency lists of graphs
         for(int id: graph.map.keySet()){
             Collections.sort(graph.map.get(id).adjacency_list, (node1_id, node2_id) -> {
                 if (graph.map.get(node1_id).degree > graph.map.get(node2_id).degree) {

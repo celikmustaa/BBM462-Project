@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class Graph {
     public HashMap<Integer, UndirectedNode> map; // node_id: node
@@ -36,11 +38,12 @@ public class Graph {
 
         node1.degree--; node2.degree--;
 
-        for (ArrayList<UndirectedNode> edge: edge_list){
+        for (ArrayList<UndirectedNode> edge: this.edge_list){
             if (edge.contains(node1) && edge.contains(node2)){
                 this.edge_list.remove(edge);
                 break;
             }
         }
+
     }
 }
