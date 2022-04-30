@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -6,11 +7,18 @@ public class Main {
         ReadFile reader = new ReadFile();
         Graph graph = reader.createGraph();
 
-        System.out.println("Degree Distribution: " + KeyProperties.degreeDistribution(graph));
-        System.out.println("Average Path Length: " + KeyProperties.averagePathLength(graph));
-        System.out.println("Diameter:" + KeyProperties.diameter);
-        System.out.println("Average Clustering Coefficient: " + KeyProperties.averageClusteringCoefficient(graph));
-        System.out.println("Size of Component: " + KeyProperties.sizeOfComponent(graph));
+        HashMap<Integer, Integer> degree_map = KeyProperties.degreeDistribution(graph);
+        System.out.print("Degree Distribution:\n{");
+        for(int key: degree_map.keySet()){
+            System.out.print("'"+key+"'"+":"+degree_map.get(key)+", ");
+        }
+        System.out.println("}\n");
+
+//        System.out.println("Degree Distribution: " + KeyProperties.degreeDistribution(graph));
+//        System.out.println("Average Path Length: " + KeyProperties.averagePathLength(graph));
+//        System.out.println("Diameter:" + KeyProperties.diameter);
+//        System.out.println("Average Clustering Coefficient: " + KeyProperties.averageClusteringCoefficient(graph));
+//        System.out.println("Size of Component: " + KeyProperties.sizeOfComponent(graph));
     }
 
 }

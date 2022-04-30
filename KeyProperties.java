@@ -49,7 +49,7 @@ public class KeyProperties {
                     }
                 }
 
-                if(extend.size() == 0){ // copy tem to extend and delete the content of temp
+                if(extend.size() == 0){ // copy temp to extend and delete the content of temp
                     extend = temp;
                     temp = new LinkedList<>();
                     current_length += 1;
@@ -96,7 +96,7 @@ public class KeyProperties {
 
     public static int numberOfComponents(Graph graph){
         int number_of_components = 0;
-
+        //TODO
         return number_of_components;
     }
 
