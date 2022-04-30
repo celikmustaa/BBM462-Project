@@ -56,12 +56,12 @@ public class KeyProperties {
                 }
             }
 
-            System.out.println("Number of neighbour of node "+ node_id+" is: "+ path_lengths.size());
+            //System.out.println("Number of neighbour of node "+ node_id+" is: "+ path_lengths.size());
         }
 
         sum_of_shortest_paths /= 2; // because we counted both i-j and j-i
 
-        System.out.println("N is: "+N+"\nN*(N-1)/2 is :"+N*(N-1)/2+"\nNumber of pairs is: "+ counter );
+        System.out.println("N is: "+N+"\nN*(N-1) is :"+N*(N-1)+"\nNumber of pairs is: "+ counter );
         return (double)sum_of_shortest_paths / ((double) N*(N-1)/2);
     }
 

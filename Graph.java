@@ -15,6 +15,11 @@ public class Graph {
         UndirectedNode node1 = this.map.get(node1_id);
         UndirectedNode node2 = this.map.get(node2_id);
 
+        if(node1.adjacency_list.contains(node2_id)){
+            System.out.println(node1_id+ " and "+node2_id+" are already connected!");
+            return;
+        }
+        //what if there are multiple edges?
         node1.adjacency_list.add(node2_id);
         node2.adjacency_list.add(node1_id);
 

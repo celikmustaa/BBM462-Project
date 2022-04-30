@@ -6,11 +6,11 @@ public class Main {
         ReadFile reader = new ReadFile();
         Graph graph = reader.createGraph();
 
-        System.out.println(KeyProperties.degreeDistribution(graph));
-        System.out.println(KeyProperties.averagePathLength(graph));
-        System.out.println(KeyProperties.diameter);
-        //System.out.println(KeyProperties.averageClusteringCoefficient(graph));
-        System.out.println(KeyProperties.sizeOfComponent(graph));
+        System.out.println("Degree Distribution: " + KeyProperties.degreeDistribution(graph));
+        System.out.println("Average Path Length: " + KeyProperties.averagePathLength(graph));
+        System.out.println("Diameter:" + KeyProperties.diameter);
+        System.out.println("Average Clustering Coefficient: " + KeyProperties.averageClusteringCoefficient(graph));
+        System.out.println("Size of Component: " + KeyProperties.sizeOfComponent(graph));
     }
 
 }

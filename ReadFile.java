@@ -6,8 +6,9 @@ import java.util.Collections;
 
 public class ReadFile {
     public static String line = "";
-    public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\twitch_gamers\\large_twitch_edges.csv";
+    //public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\twitch_gamers\\large_twitch_edges.csv";
     //public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\lasftm_asia\\lastfm_asia_target.csv";
+    public static String file_location = "C:\\Users\\musta\\Desktop\\Hacettepe\\DREAM\\twitch\\FR\\musae_FR_edges.csv";
     public static ArrayList<String> lines = new ArrayList<String>();
 
     public ReadFile() throws IOException {
