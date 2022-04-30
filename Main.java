@@ -10,9 +10,7 @@ public class Main {
         HashMap<Integer, Integer> degree_map = KeyProperties.degreeDistribution(graph);
         System.out.print("Degree Distribution:\n{");
         for(int key: degree_map.keySet()){
-            System.out.print("'"+key+"'"+":");
-            System.out.printf("%.4f",(float)degree_map.get(key)/(graph.map.size()-1));
-            System.out.print(", ");
+            System.out.printf("'%d':%.4f, ",key, (float)degree_map.get(key)/(graph.map.size()-1));
         }
         System.out.println("}\n");
 
